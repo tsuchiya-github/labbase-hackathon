@@ -1,4 +1,4 @@
-[# Labbase:「未来の空港をHackせよ！」
+# Labbase:「未来の空港をHackせよ！」
 * [Overview]
 * [開催概要]
 * [審査基準]
