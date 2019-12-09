@@ -1,71 +1,66 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Labbase:「未来の空港をHackせよ！」
+* [Overview]
+* [開催概要]
+* [審査基準]
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+#### 1日目
+| 時間 | コンテンツ |
+|:-----------|:------------|
+| 9:30       | 開場         |
+| 10:00      | インプット・技術プレゼン|
+| 11:00      | アイデアソン|
+| 12:30      | 各自ランチ|
+| 14:00      | アイデア発表|
+| 14:30      | ハッキングスタート|
+| 20:00      | 終了|
 
-## About Laravel
+#### 2日目
+| 時間 | コンテンツ |
+|:-----------|:------------|
+| 9:30       | 開場         |
+| 10:00      | オープニング|
+|      | ハッキングタイム|
+| 12:00      | 各自ランチ|
+| 15:30      | 作業終了・各作品プレゼン|
+| 17:30      | タッチ&トライ|
+| 18:30      | 懇親会・表彰|
+| 20:00      | 終了|
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## メンバー・役割
+<dl>
+  <dt>田中佑樹</dt>
+  <dd>担当役割：あああああ</dd>
+  <dt>岡田佳朗</dt>
+  <dd>担当役割：いいいいい</dd>
+  <dt>竹林あやか</dt>
+  <dd>担当役割：ううううう</dd>
+  <dt>山村将崇</dt>
+  <dd>担当役割：えええええ</dd>
+  <dt>土屋陽輝</dt>
+  <dd>担当役割：おおおおお</dd>
+</dl>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## アイデア
+<details>
+<summary>××</summary>
+概要
+</details>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<details>
+<summary>△△</summary>
+概要
+</details>
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## その他(参考文献等)
+* [Markdownチートシート]
+* [WebAPI一覧]
+* [Github使い方]
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost you and your team's skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+[Overview]:https://hackathon.we-are-ma.jp/hackfuture/#overview
+[開催概要]:https://hackathon.we-are-ma.jp/hackfuture/#outline
+[審査基準]:https://hackathon.we-are-ma.jp/hackfuture/#examination
+[Markdownチートシート]:https://qiita.com/Qiita/items/c686397e4a0f4f11683d
+[WebAPI一覧]:https://qiita.com/mikan3rd/items/ba4737023f08bb2ca161
+[Github使い方]:https://employment.en-japan.com/engineerhub/entry/2017/01/31/110000
