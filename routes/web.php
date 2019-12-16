@@ -13,3 +13,10 @@
 
 Route::get('/', 'PagesController@index');
 Route::post('/review', 'PagesController@review');
+Route::get('/test', 'PagesController@test');
+Route::get('/twitter', 'PagesController@twitter');
+
+
+Route::get('/top', 'PagesController@top');
+
+Route::post('/judge', 'PagesController@judge');
