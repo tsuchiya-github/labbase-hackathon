@@ -67,8 +67,9 @@
         <!--自作CSS -->
     <style type="text/css">
         /*ここに調整CSS記述*/
-        .jumbotron { background:url(/picture/takamatsu.jpg) center no-repeat; background-position: bottom 60%; background-size: cover;}
+        .jumbotron { background:url(/picture/takamatsu.png) center no-repeat; background-position: bottom 60%; background-size: cover;}
         .background {opacity: 0.1;}
+        .row-eq-height {display: flex; flex-wrap: wrap;}
     </style>
 
 </head>

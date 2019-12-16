@@ -20,6 +20,7 @@
     </div>
     <br>
 
+
     @php
     $url = 'https://devomouua.cybozu.com/k/v1/records.json?app=4';
     $headers = [
@@ -34,42 +35,75 @@
 
     $response = curl_exec($curl);
     $result = json_decode($response, true);
-    // var_dump($result["records"]);
-    $test = array_column($result["records"], "shop_name");
-
-    // var_dump($test[0]['value']);
+    $shop = array_column($result["records"], "shop_name");
+    $image = array_column($result["records"], "image");
     curl_close($curl);
+    $post=[];
+    $card=0;
     @endphp
 
-    @php
-        $post=[];
-    @endphp
+    <form action="/judge" method="post" name="post_tag">
+        {{ csrf_field() }}
+        <p>いつからのツイートで検索しますか?：
+            <input type="date" name="since">
+        </p>
+        <p>何件のツイートで評価しますか(最小5，最大50)?：
+            <input type="number" name="count" min="3" max="20">
+        </p>
+        <p>テスト用(#抜きのテキストを入力):
+        <input type="text" name="post_test_tag">
+        <button type="submit" class="btn btn-success">テスト用ツイート解析結果</button>
+        </p>
 
+    <div class="row row-eq-height" margin-bottom: 20rem;>
         @for ($i = 0; $i < 8; $i++)
+            <div class="col-sm-6 col-md-3">
+                <div class="card img-thumbnail">
+                    <img class="card-img-top" src={{$image[$i]['value']}} alt="画像">
+                    <div class="card-body px-2 py-3">
+                        <h5 class="card-title">{{$shop[$i]['value']}}</h5>
+                            <p class="card-text">{{$shop[$i]['value']}}に関する口コミを検索します</p>
+                            <input type="hidden" name="post_tag" value={{$shop[$i]['value']}}>
+                            <center><button type="submit" class="btn btn-success">ツイート解析結果</button></center>
+                        </div><!-- /.card-body -->
+                </div><!-- /.card -->
+            </div><!-- /.col-sm-6.col-md-3 -->
+        @php
+            $card++;
+        @endphp    
+        @if ($card%4==0)
+            </div><!-- /.row -->
+            <div class="row row-eq-height" margin-bottom: 20rem;>
+        @endif
+    @endfor
+
+</form>
+
+        {{-- @for ($i = 0; $i < 8; $i++)
             <div class="card border-info mb-3" style="max-width: 20rem;">
                 <div class="card-header text-white bg-success">
                     <form action="/judge" method="post" name="post_tag"
 >
                         {{ csrf_field() }}
-                        <input type="hidden" name="post_tag" value={{$test[$i]['value']}}>
+                        <input type="hidden" name="post_tag" value={{$shop[$i]['value']}}>
                             <p>いつからのツイートで検索しますか：</p>
                         <input type="date" name="since">
                             <p>何件のツイートで評価しますか(最小5，最大50)：</p>
                         <input type="number" name="count" min="5" max="50">
 
 
-                        <button type="submit" class="btn btn-success rounded-pill">{{$test[$i]['value']}}</button>
+                        <button type="submit" class="btn btn-success rounded-pill">{{$shop[$i]['value']}}</button>
                     </form>
                 </div>
                 <div class="card-block">
                     <p class="card-text">
-                        {{$test[$i]['value']}}に関する口コミを検索します
+                        {{$shop[$i]['value']}}に関する口コミを検索します
                     </p>
                 </div>
             </div>
         @endfor
     
-
+ --}}
 
     
 

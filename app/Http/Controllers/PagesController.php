@@ -30,33 +30,58 @@ class PagesController extends Controller
     {
         // $tag = $request->tag;
         $tag = $request->post_tag;
+        $test_tag = $request->post_test_tag;
         $count = $request->count;
         $since = $request->since. "_00:00:00_JST";
-        $until = date("Y-m-d_H:i:s_e");
-        // dd($until);
+        $until_before = date("Y-m-d_H:i:s_e");
+        $until = str_replace('Asia/Tokyo', 'JST', $until_before);
+        // dd($test_tag);
+        
         //ツイートを5件取得
 
         // '#'.$tag
         // $result = \Twitter::get('statuses/home_timeline', array("count" => 15));
-        $hash_params = ['q' => '#'.$tag, 'count' => $count, 'lang' => 'ja', 'since' => $since, 'until' => $until];
-        $hash = \Twitter::get('search/tweets', $hash_params)->statuses;
-        if($hash == null) {
-            session()->flash('flash_message', 'ツイート情報がありません');
-            return redirect('/');
+        if($test_tag==NULL) {
+            $hash_params = ['q' => '#'.$tag, 'count' => $count, 'lang' => 'ja', 'since' => $since, 'until' => $until];
+            $hash = \Twitter::get('search/tweets', $hash_params)->statuses;
+            if ($hash == null) {
+                session()->flash('flash_message', 'ツイート情報がありません');
+                return redirect('/');
+            }
+
+
+            $url = 'https://devomouua.cybozu.com/k/v1/records.json?app=4';
+            $headers = [
+                'X-Cybozu-API-Token: 7GMsxmVkzass7ZkT9IRytGWJ5rsldY563vKJ331j',
+                'Content-Type: application/json'
+            ];
+
+
+            // $keywords = Keyword_database::where('tag', $tag)->orderby('ID', 'asc')->get();//pagenateするとtake(3)が無視される
+            return view('pages.review', [
+                "hash" => $hash, "url" => $url, "headers" => $headers, "tag" => $tag, "count" => $count
+            ]);
+        } else {
+            $hash_params = ['q' => '#'.$test_tag, 'count' => $count, 'lang' => 'ja', 'since' => $since, 'until' => $until];
+            $hash = \Twitter::get('search/tweets', $hash_params)->statuses;
+            if ($hash == null) {
+                session()->flash('flash_message', 'ツイート情報がありません');
+                return redirect('/');
+            }
+
+
+            $url = 'https://devomouua.cybozu.com/k/v1/records.json?app=4';
+            $headers = [
+                'X-Cybozu-API-Token: 7GMsxmVkzass7ZkT9IRytGWJ5rsldY563vKJ331j',
+                'Content-Type: application/json'
+            ];
+
+
+            // $keywords = Keyword_database::where('tag', $tag)->orderby('ID', 'asc')->get();//pagenateするとtake(3)が無視される
+            return view('pages.review', [
+                "hash" => $hash, "url" => $url, "headers" => $headers, "tag" => $test_tag, "count" => $count
+            ]);
         }
-
-
-        $url = 'https://devomouua.cybozu.com/k/v1/records.json?app=4';
-        $headers = [
-            'X-Cybozu-API-Token: 7GMsxmVkzass7ZkT9IRytGWJ5rsldY563vKJ331j',
-            'Content-Type: application/json'
-        ];
-
-
-        // $keywords = Keyword_database::where('tag', $tag)->orderby('ID', 'asc')->get();//pagenateするとtake(3)が無視される
-        return view('pages.review', [
-            "hash" => $hash, "url" => $url, "headers" => $headers, "tag"=> $tag, "count" => $count
-        ]);
     }
     
 
