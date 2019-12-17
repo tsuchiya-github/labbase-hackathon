@@ -29,6 +29,7 @@ class PagesController extends Controller
     public function judge(Request $request)
     {
         // $tag = $request->tag;
+        // dd($request);
         $tag = $request->post_tag;
         $test_tag = $request->post_test_tag;
         $count = $request->count;
@@ -110,4 +111,3 @@ class PagesController extends Controller
 
 
 }
-
