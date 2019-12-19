@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-        <title>うっどんずラブ - @yield('title')</title>
+        <title>うっどんずラブ</title>
     </head>
     {{-- <body> --}}
     <body style="padding-top:4.5rem;">
@@ -70,6 +70,20 @@
         .jumbotron { background:url(/picture/takamatsu.png) center no-repeat; background-position: bottom 60%; background-size: cover;}
         .background {opacity: 0.1;}
         .row-eq-height {display: flex; flex-wrap: wrap;}
+
+        h1 {
+        border-bottom: solid 3px #cce4ff;
+        position: relative;
+        }
+
+        h1:after {
+        position: absolute;
+        content: " ";
+        display: block;
+        border-bottom: solid 3px #5472cd;
+        bottom: -3px;
+        width: 20%;
+        }
     </style>
 
 </head>
