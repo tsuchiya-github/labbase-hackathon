@@ -6,22 +6,12 @@
 
 @section('content')
     <div class="jumbotron">
-        <h1>口コミをリアルタイムに表示するWebアプリ</h1>
+        <h1>うっどんずラブ</h1>
         <p>本アプリは高松空港のお店に関する口コミを表示するアプリです!</p>
-    </div>
-
-    <div class="border border-info" style="padding:10px;">
-        <h2>何について調べたいですか?</h2>    
     </div>
     <br>
 
-
     @php
-    $url = 'https://devomouua.cybozu.com/k/v1/records.json?app=4';
-    $headers = [
-        'X-Cybozu-API-Token: A0W8Q7EKSibffANpUvHpn3j0GkpWr1CDGD4vdNJ6',
-    //   'Content-Type: application/json'
-    ];
     $curl = curl_init($url);
 
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
@@ -43,15 +33,11 @@
                 <div class="card img-thumbnail">
                     <img class="card-img-top" src={{$image[$i]['value']}} alt="画像">
                     <div class="card-body px-2 py-3">
-                        <h5 class="card-title">{{$shop[$i]['value']}}</h5>
-                            <p class="card-text">{{$shop[$i]['value']}}に関する口コミを検索します</p>
+                        <h4 class="card-title">{{$shop[$i]['value']}}</h4>
                             <form action="/judge" method="post" name=post_tag>
                                 {{ csrf_field() }}                            
-                                <p>いつからのツイートで検索しますか?：
-                                    <input type="date" name="since">
-                                </p>
-                                <p>何件のツイートで評価しますか(最小3，最大50)?：
-                                    <input type="number" name="count" min="3" max="50">
+                                <p>何件のツイートで評価しますか?<br>(最小3，最大100)：
+                                    <input type="number" name="count" min="3" max="100">
                                 </p>
                                 <input type="hidden" name="post_tag" value="{{$shop[$i]['value']}}">
                                 <center><button type="submit" class="btn btn-success" id="btn">ツイート解析結果</button></center>
@@ -72,19 +58,16 @@
     {{-- 以下テスト --}}
     <br>
     <div class="border border-success" style="padding:10px;">
-        <h2>テスト用</h2>    
+        <h2>他のお店の口コミを調べてみる</h2>    
     </div>
     <br>
     
     <form action="/judge" method="post" name="post_test_tag">
         {{ csrf_field() }}
-        <p>いつからのツイートで検索しますか?：
-            <input type="date" name="since">
+        <p>何件のツイートで評価しますか(最小3，最大100)?：
+            <input type="number" name="count" min="3" max="100">
         </p>
-        <p>何件のツイートで評価しますか(最小3，最大20)?：
-            <input type="number" name="count" min="3" max="20">
-        </p>
-        <p>テスト用(#抜きのテキストを入力):
+        <p>ハッシュタグ(#抜きのテキストを入力):
         <input type="text" name="post_test_tag">
         <button type="submit" class="btn btn-success" id="btn">テスト用ツイート解析結果</button>
         </p>
