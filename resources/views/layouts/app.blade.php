@@ -33,7 +33,7 @@
             @yield('content')
         </div>
 
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-8">
                 @yield('content-main')
@@ -72,19 +72,95 @@
         .row-eq-height {display: flex; flex-wrap: wrap;}
 
         h1 {
-        border-bottom: solid 3px #cce4ff;
-        position: relative;
+        color: #364e96;/*文字色*/
+        border: solid 3px #364e96;/*線色*/
+        padding: 0.5em;/*文字周りの余白*/
+        border-radius: 0.5em;/*角丸*/
         }
 
-        h1:after {
+        h3 {
+        padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+        color: #494949;/*文字色*/
+        background: #f4f4f4;/*背景色*/
+        border-left: solid 5px #7db4e6;/*左線*/
+        border-bottom: solid 3px #d7d7d7;/*下線*/
+        }
+
+        h4 {
+        padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+        color: #494949;/*文字色*/
+        background: #f4f4f4;/*背景色*/
+        border-left: solid 5px #7db4e6;/*左線*/
+        border-bottom: solid 3px #d7d7d7;/*下線*/
+        text-align: center;
+        }
+
+        section {
+            overflow: scroll;
+            margin: 50px auto 20px;
+            padding: 25px;
+            width: auto;
+            height: 600px;
+            border: 2px solid #ccc;
+        }
+
+        p {
+            min-width: 400px;
+        }
+
+        figure {
+            width: 400px;
+        }
+
+        .balloon5 {
+        width: 100%;
+        margin: 1.5em 0;
+        overflow: hidden;
+        }
+
+        .balloon5 .faceicon {
+        float: left;
+        margin-right: -90px;
+        width: 80px;
+        }
+
+        .balloon5 .faceicon img{
+        width: 100%;
+        height: auto;
+        border: solid 3px #d7ebfe;
+        border-radius: 50%;
+        }
+
+        .balloon5 .chatting {
+        width: 100%;
+        }
+
+        .says {
+        display: inline-block;
+        position: relative; 
+        margin: 5px 0 0 105px;
+        padding: 17px 13px;
+        border-radius: 12px;
+        background: #d7ebfe;
+        }
+
+        .says:after {
+        content: "";
+        display: inline-block;
         position: absolute;
-        content: " ";
-        display: block;
-        border-bottom: solid 3px #5472cd;
-        bottom: -3px;
-        width: 20%;
+        top: 18px; 
+        left: -24px;
+        border: 12px solid transparent;
+        border-right: 12px solid #d7ebfe;
+        }
+
+        .says p {
+        margin: 0;
+        padding: 0;
         }
     </style>
+
+
 
 </head>
 </html>
